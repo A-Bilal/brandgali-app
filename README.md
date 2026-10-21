@@ -70,6 +70,28 @@ instead.
 
 ---
 
+## Build an installable app (EAS Build)
+
+`eas.json` holds the cloud build settings:
+
+| Profile | What it makes | Use it for |
+|---|---|---|
+| `preview` | An Android **.apk** file you can install directly | Testing on your phone and sharing with testers, no computer needed |
+| `production` | Store-ready builds (.aab for Google Play, .ipa for the App Store) | Publishing |
+
+You'll need a free account at [expo.dev](https://expo.dev). Then, in PowerShell inside the
+`brandgali-app` folder:
+
+```powershell
+npx eas-cli@latest login
+npx eas-cli@latest build --platform android --profile preview
+```
+
+The first build asks a few questions (answer **Yes** to creating the project and generating a
+keystore). It takes about 10–20 minutes, then gives you a link to download and install the app.
+
+---
+
 ## How the code is organised
 
 ```
